@@ -3,3 +3,8 @@
 ################################################################################
 
 /OrderManagementSystem/obj
+/OrderManagementSystemTest/obj/Debug/net5.0
+/OrderManagementSystemTest/bin/Debug/net5.0
+/OrderManagementSystemTest/obj
+/OrderManagementSystem/bin/Debug/net5.0
+/OrderManagementSystem/.vs/OrderManagementSystem/v16
