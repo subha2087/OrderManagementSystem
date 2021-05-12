@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace OrderManagementSystem
 {
-    public interface IEmailService
+    public interface IMemberService
     {
-        bool SendEmail(string emailId,int templateId);
+        bool Activate();
+
+        bool Upgrade(Int32 memberId);
     }
 }
