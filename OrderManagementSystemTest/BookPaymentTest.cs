@@ -20,7 +20,7 @@ namespace OrderManagementSystemTest
             //Act
             if(payment.MakePayment<BookPaymentModel>(bookPaymentModel))
             {
-                isDuplicateSlipGenerated = packingService.GenerateDuplicateSlip();
+                isDuplicateSlipGenerated = packingService.GenerateDuplicateSlip(id);
             }
             //Assert
             Assert.AreEqual(expected, isDuplicateSlipGenerated);
