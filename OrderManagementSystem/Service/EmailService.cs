@@ -10,7 +10,8 @@ namespace OrderManagementSystem
     {
         public bool SendEmail(string emailId, int templateId)
         {
-            throw new NotImplementedException();
+            //todo logic for sending email
+            return true;
         }
     }
 }
