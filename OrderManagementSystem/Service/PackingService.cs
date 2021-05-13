@@ -12,6 +12,7 @@ namespace OrderManagementSystem
         {
             //ToDo
             //logic
+            Console.WriteLine("Duplicate Payment Slip Generated");
             return true;
         }
 
@@ -19,6 +20,7 @@ namespace OrderManagementSystem
         {
             //Todo
             //Code for Generating slip
+            Console.WriteLine("Payment Slip Generated");
             return true;
         }
     }

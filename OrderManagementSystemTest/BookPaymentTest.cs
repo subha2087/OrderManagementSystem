@@ -11,17 +11,13 @@ namespace OrderManagementSystemTest
         public void MakePayment()
         {
             //Prepare
-            BookPayment payment = new BookPayment();
+            BookPayment payment = new BookPayment(new PackingService());
             BookPaymentModel bookPaymentModel = new BookPaymentModel();
-            IPackingService packingService = new PackingService();
             bool isDuplicateSlipGenerated = false;
-            int id = 1;
             bool expected = true;
             //Act
-            if(payment.MakePayment<BookPaymentModel>(bookPaymentModel))
-            {
-                isDuplicateSlipGenerated = packingService.GenerateDuplicateSlip(id);
-            }
+            isDuplicateSlipGenerated = payment.MakePayment<BookPaymentModel>(bookPaymentModel);
+           
             //Assert
             Assert.AreEqual(expected, isDuplicateSlipGenerated);
         }
@@ -29,7 +25,7 @@ namespace OrderManagementSystemTest
         [TestMethod]
         public void CommisionUponMakePayment()
         {
-            BookPayment payment = new BookPayment();
+            BookPayment payment = new BookPayment(new PackingService());
             BookPaymentModel bookPaymentModel = new BookPaymentModel();
             bool actual = false;
             bool expected = true;

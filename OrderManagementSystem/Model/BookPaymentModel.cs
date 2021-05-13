@@ -8,5 +8,6 @@ namespace OrderManagementSystem
 {
     public class BookPaymentModel : IPaymentModel
     {
+        public int PackingId { get; set; }
     }
 }

@@ -8,9 +8,16 @@ namespace OrderManagementSystem.BLL
 {
     public class ProductPayment :PaymentService<ProductPaymentModel>
     {
+        private IPackingService _packingServce;
+        public ProductPayment(IPackingService packingService)
+        {
+            _packingServce = packingService;
+        }
         protected override bool MakePayment(ProductPaymentModel model)
         {
-            //todo logic
+            //todo logic process payment
+            //If payment success
+            _packingServce.GeneratePaymentSlip();
             return true;
         }
     }

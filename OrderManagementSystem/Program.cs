@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrderManagementSystem.BLL;
+using System;
 
 namespace OrderManagementSystem
 {
@@ -6,7 +7,16 @@ namespace OrderManagementSystem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //To be replaced with dependancy Injection in startup 
+            ProductPayment productPayment = new ProductPayment(new PackingService());
+            ProductPaymentModel model = new ProductPaymentModel();
+            productPayment.MakePayment<ProductPaymentModel>(model);
+
+            //To be replaced with dependancy Injection in startup 
+            BookPayment bookPayment = new BookPayment(new PackingService());
+            BookPaymentModel bpmodel = new BookPaymentModel();
+            bookPayment.MakePayment<BookPaymentModel>(bpmodel);
+
         }
     }
 }

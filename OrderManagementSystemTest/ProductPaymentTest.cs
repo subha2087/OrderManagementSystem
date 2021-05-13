@@ -10,22 +10,18 @@ namespace OrderManagementSystemTest
         [TestMethod]
         public void MakePayment()
         {
-            ProductPayment payment = new ProductPayment();
+            ProductPayment payment = new ProductPayment(new PackingService());
             ProductPaymentModel productPaymentModel = new ProductPaymentModel();
-            IPackingService packingService = new PackingService();
             bool isPaymentSlipGenerated = false;
             bool expected = true;
-            if(payment.MakePayment<ProductPaymentModel>(productPaymentModel))
-            {
-                isPaymentSlipGenerated= packingService.GeneratePaymentSlip();
-            }
+            isPaymentSlipGenerated = payment.MakePayment<ProductPaymentModel>(productPaymentModel);
             Assert.AreEqual(expected, isPaymentSlipGenerated);
         }
 
         [TestMethod]
         public void CommisionUponMakePayment()
         {
-            ProductPayment payment = new ProductPayment();
+            ProductPayment payment = new ProductPayment(new PackingService());
             ProductPaymentModel productPaymentModel = new ProductPaymentModel();
             bool actual = false;
             bool expected = true;
