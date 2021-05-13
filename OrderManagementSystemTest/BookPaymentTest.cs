@@ -25,5 +25,19 @@ namespace OrderManagementSystemTest
             //Assert
             Assert.AreEqual(expected, isDuplicateSlipGenerated);
         }
+
+        [TestMethod]
+        public void CommisionUponMakePayment()
+        {
+            BookPayment payment = new BookPayment();
+            BookPaymentModel bookPaymentModel = new BookPaymentModel();
+            bool actual = false;
+            bool expected = true;
+            if (payment.MakePayment<BookPaymentModel>(bookPaymentModel))
+            {
+                actual = payment.MakeCommisionPayment<BookPaymentModel>(bookPaymentModel);
+            }
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

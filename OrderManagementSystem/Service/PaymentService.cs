@@ -14,6 +14,10 @@ namespace OrderManagementSystem
            return MakePayment((TModel)(object)model);
         }
 
+        public bool MakeCommisionPayment<T>(T model) where T : IPaymentModel
+        {
+            return MakePayment((TModel)(object)model);
+        }
         protected abstract bool MakePayment(TModel model);
     }
 }

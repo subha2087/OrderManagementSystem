@@ -21,5 +21,19 @@ namespace OrderManagementSystemTest
             }
             Assert.AreEqual(expected, isPaymentSlipGenerated);
         }
+
+        [TestMethod]
+        public void CommisionUponMakePayment()
+        {
+            ProductPayment payment = new ProductPayment();
+            ProductPaymentModel productPaymentModel = new ProductPaymentModel();
+            bool actual = false;
+            bool expected = true;
+            if (payment.MakePayment<ProductPaymentModel>(productPaymentModel))
+            {
+                actual = payment.MakeCommisionPayment<ProductPaymentModel>(productPaymentModel);
+            }
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
