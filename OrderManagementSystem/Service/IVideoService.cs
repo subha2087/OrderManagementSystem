@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderManagementSystem
 {
-    interface IVideoService
+   public interface IVideoService
     {
         bool AddFreeVideo();
     }
