@@ -10,7 +10,8 @@ namespace OrderManagementSystem
     {
         public bool AddFreeVideo()
         {
-            throw new NotImplementedException();
+            //todo logic for adding firstaid video
+            return true;
         }
     }
 }
